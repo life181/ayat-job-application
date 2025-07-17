@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ayat Real Estate – Job Application Form</title>
+  <link href="https://fonts.googleapis.com/css?family=Inter:400,600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #0b3c5d;
+      --accent: #1de9b6;
+      --bg: #f8fafc;
+      --white: #fff;
+      --error: #e53935;
+      --gray: #6c757d;
+      --border: #e5e7eb;
+      --highlight: #00cbaa;
+      --shadow: 0 8px 40px rgba(11,60,93,.15);
+      --yellow: #ffeb3b;
+      --radius: 18px;
+      --transition: 0.2s cubic-bezier(.68,-0.55,.27,1.55);
+    }
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      font-family: 'Inter', Arial, sans-serif;
+      min-height: 100%;
+      color: var(--primary);
+    }
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0;
+      background: linear-gradient(120deg, #f8fafc 60%, #e8fcf6 100%);
+    }
+    .container {
+      background: var(--white);
+      max-width: 520px;
+      width: 100%;
+      margin: 36px auto 0 auto;
+      box-shadow: var(--shadow);
+      border-radius: var(--radius);
+      padding: 36px 28px 28px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      align-items: stretch;
+      position: relative;
+    }
+    .logo-box {
+      text-align: center;
+      margin-bottom: 8px;
+    }
+    .logo-box img {
+      height: 60px;
+      width: auto;
+      max-width: 180px;
+      object-fit: contain;
+      margin-bottom: 2px;
+      filter: drop-shadow(0 2px 10px #0b3c5d12);
+      transition: transform var(--transition);
+    }
+    .logo-box img:hover {
+      transform: scale(1.07) rotate(-2deg);
+    }
+    .logo-box figcaption {
+      font-size: 1.07em;
+      color: var(--primary);
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      margin-top: 4px;
+      opacity: 0.85;
+    }
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin: 0 0 6px 0;
+      text-align: center;
+      letter-spacing: 0.01em;
+      background: linear-gradient(90deg, var(--primary), var(--accent) 80%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .subtitle {
+      font-size: 1.05rem;
+      color: var(--gray);
+      margin-bottom: 12px;
+      text-align: center;
+      font-weight: 500;
+    }
+    .eligibility {
+      background: linear-gradient(90deg, var(--primary) 90%, #0b3c5d90 100%);
+      color: var(--white);
+      border-radius: 11px;
+      padding: 16px;
+      font-size: 0.99rem;
+      margin-bottom: 6px;
+      font-weight: 500;
+      line-height: 1.54;
+      border-left: 6px solid var(--accent);
+      box-shadow: 0 2px 13px #0b3c5d18;
+    }
+    .deadline {
+      display: block;
+      color: var(--yellow);
+      font-weight: 700;
+      margin-top: 7px;
+      font-size: 1.07em;
+      letter-spacing: 0.01em;
+      text-shadow: 0 1px 2px #0b3c5d20;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 2px;
+    }
+    label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: var(--primary);
+      font-size: 1rem;
+    }
+    .required {
+      color: var(--error);
+      margin-left: 3px;
+      font-weight: 700;
+    }
+    input[type="text"], input[type="tel"], select, input[type="file"] {
+      width: 100%;
+      padding: 10px 13px;
+      border: 1.5px solid var(--border);
+      border-radius: 7px;
+      font-size: 1rem;
+      box-sizing: border-box;
+      font-family: inherit;
+      background: var(--bg);
+      transition: border-color 0.2s, box-shadow 0.16s;
+      outline: none;
+    }
+    input[type="text"]:focus,
+    input[type="tel"]:focus,
+    select:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 2px #1de9b633;
+    }
+    input[type="file"] {
+      background: var(--white);
+      font-size: 0.98rem;
+      padding: 8px 2px;
+      border: none;
+    }
+    .note {
+      font-size: 0.93rem;
+      color: var(--gray);
+      margin-bottom: 2px;
+      margin-top: 2px;
+    }
+    .form-group {
+      margin-bottom: 2px;
+      display: flex;
+      flex-direction: column;
+    }
+    .btn-submit {
+      background: linear-gradient(90deg, var(--primary), var(--accent) 80%);
+      color: var(--white);
+      border: none;
+      border-radius: 8px;
+      padding: 14px 0;
+      font-size: 1.13rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.18s;
+      margin-top: 8px;
+      box-shadow: 0 2px 11px rgba(29,233,182,0.10);
+      letter-spacing: 0.01em;
+      outline: none;
+    }
+    .btn-submit:hover, .btn-submit:focus {
+      background: linear-gradient(90deg, var(--accent), var(--primary) 90%);
+      transform: translateY(-2px) scale(1.023);
+      box-shadow: 0 6px 30px #1de9b636;
+    }
+    .success, .error-msg {
+      padding: 12px 16px;
+      border-radius: 7px;
+      margin-top: 7px;
+      font-size: 1rem;
+      font-weight: 600;
+      text-align: center;
+      display: none;
+      margin-bottom: 0;
+      letter-spacing: 0.01em;
+      border-width: 1.5px;
+    }
+    .success {
+      background: #e7fff6;
+      color: #13a37b;
+      border: 1.5px solid #13a37b;
+    }
+    .error-msg {
+      background: #fff0f0;
+      color: var(--error);
+      border: 1.5px solid var(--error);
+    }
+    /* CMC Section */
+    .cmc-section {
+      max-width: 860px;
+      width: 96vw;
+      margin: 36px auto 34px auto;
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 28px 28px 34px 28px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 18px;
+      position: relative;
+    }
+    .cmc-headline {
+      font-size: 1.49em;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 4px;
+      text-align: center;
+      letter-spacing: 0.02em;
+      background: linear-gradient(90deg, var(--primary), var(--accent) 80%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .cmc-desc {
+      color: var(--gray);
+      font-size: 1.08em;
+      font-weight: 500;
+      text-align: center;
+      margin-bottom: 8px;
+      line-height: 1.62;
+      max-width: 600px;
+    }
+    .cmc-gallery {
+      display: flex;
+      gap: 18px;
+      width: 100%;
+      justify-content: center;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+    .cmc-gallery img {
+      border-radius: 11px;
+      object-fit: cover;
+      width: 220px;
+      height: 150px;
+      min-width: 160px;
+      box-shadow: 0 3px 16px #0b3c5d17;
+      border: 2px solid var(--bg);
+      background: #eee;
+      transition: transform 0.17s cubic-bezier(.68,-0.55,.27,1.55), box-shadow 0.14s;
+      cursor: pointer;
+      aspect-ratio: 11/7;
+    }
+    .cmc-gallery img:hover, .cmc-gallery img:focus {
+      transform: scale(1.045) translateY(-3px);
+      box-shadow: 0 6px 36px #1de9b626;
+      border-color: var(--accent);
+      z-index: 3;
+    }
+    @media (max-width: 900px) {
+      .cmc-section {
+        max-width: 100%;
+        padding: 18px 7px 26px 7px;
+      }
+      .cmc-gallery img {
+        width: 42vw;
+        max-width: 320px;
+        min-width: 140px;
+        height: 32vw;
+        max-height: 170px;
+        min-height: 90px;
+        aspect-ratio: 11/7;
+      }
+    }
+    @media (max-width: 600px) {
+      .container {
+        padding: 20px 4vw 14px 4vw;
+        border-radius: 12px;
+      }
+      h1 {
+        font-size: 1.19rem;
+      }
+      .eligibility {
+        font-size: 0.93rem;
+        padding: 10px;
+        border-radius: 7px;
+      }
+      .cmc-headline {
+        font-size: 1.07rem;
+      }
+      .cmc-gallery {
+        flex-direction: column;
+        gap: 11px;
+      }
+      .cmc-gallery img {
+        width: 96vw;
+        min-width: 0;
+        height: 35vw;
+        max-width: 340px;
+        max-height: 160px;
+        min-height: 80px;
+      }
+      .cmc-section {
+        border-radius: 11px;
+      }
+    }
+    @media (max-width: 420px) {
+      .container, .cmc-section { padding: 10px 2vw 11px 2vw; }
+      .cmc-section { margin-top: 20px; }
+      .cmc-gallery img { max-width: 96vw; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <figure class="logo-box">
+      <!-- Replace the src below with your real logo URL -->
+      <img src="logo.png" alt="Ayat Real Estate Logo" loading="lazy">
+      <figcaption>Ayat Real Estate</figcaption>
+    </figure>
+    <h1>Ayat Real Estate – Job Application Form</h1>
+    <div class="subtitle">
+      Apply for our exciting vacancies! Upload your documents and fill in your details as required.<br>
+      We look forward to your application!
+    </div>
+    <div class="eligibility">
+      <strong>Eligibility:</strong><br>
+      Only graduates from <span style="color:var(--accent);font-weight:700;">2024 or 2025</span> with a field of study in <span style="color:var(--accent);font-weight:700;">Civil Engineering, Surveying Engineering, COTM, Business Management, Management, Accounting, or Economics</span> are eligible to apply.
+      <span class="deadline">Application deadline: <u>before July 30, 2025</u></span>
+    </div>
+    <form id="jobAppForm" action="https://getform.io/f/bdrgzjnb" method="POST" enctype="multipart/form-data" autocomplete="off" novalidate>
+      <div class="form-group">
+        <label for="fullname">Full Name <span class="required">*</span></label>
+        <input type="text" id="fullname" name="Full Name" required maxlength="120" autocomplete="name">
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone Number <span class="required">*</span></label>
+        <input type="tel" id="phone" name="Phone Number" required maxlength="20" pattern="^[0-9+\-\s()]{8,}$" placeholder="+251912345678">
+      </div>
+      <div class="form-group">
+        <label for="position">Which position are you applying for? <span class="required">*</span></label>
+        <select id="position" name="Position Applied For" required>
+          <option value="" disabled selected>-- Select Position --</option>
+          <option>Office Engineer</option>
+          <option>Site Engineer</option>
+          <option>Sales</option>
+          <option>Auditing & Related</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="field">Field of Study <span class="required">*</span></label>
+        <select id="field" name="Field of Study" required>
+          <option value="" disabled selected>-- Select Field --</option>
+          <option>Civil Engineering</option>
+          <option>Surveying Engineering</option>
+          <option>COTM</option>
+          <option>Business Management & Related</option>
+          <option>Management & Related</option>
+          <option>Accounting & Related</option>
+          <option>Economics</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="gradYear">Graduation Year <span class="required">*</span></label>
+        <select id="gradYear" name="Graduation Year" required>
+          <option value="" disabled selected>-- Select Year --</option>
+          <option>2024</option>
+          <option>2025</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="cert">Upload Scanned Temporary Certificate (PDF) <span class="required">*</span></label>
+        <input type="file" id="cert" name="Temporary Certificate" accept="application/pdf" required aria-describedby="certHelp">
+        <div class="note" id="certHelp">PDF only, max 5MB.</div>
+      </div>
+      <div class="form-group">
+        <label for="cv">Upload CV/Resume <span class="note">(Optional)</span></label>
+        <input type="file" id="cv" name="CV" accept="application/pdf,.doc,.docx" aria-describedby="cvHelp">
+        <div class="note" id="cvHelp">PDF, DOC or DOCX, max 5MB.</div>
+      </div>
+      <div class="form-group">
+        <label for="nidFront">Upload National ID (Front Side) <span class="required">*</span></label>
+        <input type="file" id="nidFront" name="National ID Front" accept="image/*,application/pdf" required aria-describedby="nidFrontHelp">
+        <div class="note" id="nidFrontHelp">Image (JPG/PNG) or PDF, max 5MB.</div>
+      </div>
+      <div class="form-group">
+        <label for="nidBack">Upload National ID (Back Side) <span class="required">*</span></label>
+        <input type="file" id="nidBack" name="National ID Back" accept="image/*,application/pdf" required aria-describedby="nidBackHelp">
+        <div class="note" id="nidBackHelp">Image (JPG/PNG) or PDF, max 5MB.</div>
+      </div>
+      <div class="form-group">
+        <label for="photo">Upload Passport Size Photo (JPG/Image) <span class="required">*</span></label>
+        <input type="file" id="photo" name="Passport Photo" accept="image/jpeg,image/png" required aria-describedby="photoHelp">
+        <div class="note" id="photoHelp">JPG or PNG, max 5MB.</div>
+      </div>
+      <button type="submit" class="btn-submit">Submit Application</button>
+      <div class="success" id="successMsg" role="alert" aria-live="polite">Your application has been submitted! Thank you.</div>
+      <div class="error-msg" id="errorMsg" role="alert" aria-live="assertive">Please check your inputs and file sizes/types.</div>
+    </form>
+  </div>
+
+  <!-- CMC Site 3 Section -->
+  <div class="cmc-section">
+    <div class="cmc-headline">Discover CMC Site  – The Future of Modern Living in Addis Ababa</div>
+    <div class="cmc-desc">
+      <strong>CMC Site </strong> by Ayat Real Estate is more than just a residential complex—it's a vibrant, growing community at the heart of Addis Ababa. Enjoy stunning architecture, lush green spaces, and unbeatable access to transportation, shopping, and recreation. Make your career and your future part of something big at CMC Site !
+    </div>
+    <div class="cmc-gallery">
+      <!-- Replace the src attributes with your own CMC Site 3 photos -->
+      <img src="cmc site.jpg" alt="CMC Site  View 1" loading="lazy" tabindex="0">
+      <img src="cmc site photo.jpg" alt="CMC Site 3 View 2" loading="lazy" tabindex="0">
+      <img src="cmc site 3rd photo.jpg" alt="CMC Site 3 View 3" loading="lazy" tabindex="0">
+    </div>
+  </div>
+
+  <script>
+    // File size validation (max 5MB)
+    function validateFileSize(input) {
+      if (input.files.length > 0) {
+        return input.files[0].size <= 5 * 1024 * 1024;
+      }
+      return true;
+    }
+
+    // Validate all required file inputs for size and type
+    function validateFiles() {
+      const fileFields = [
+        { id: "cert", types: ["application/pdf"] },
+        { id: "cv", types: ["application/pdf", "application/msword", "application/vnd.openxmlformats-officedocument.wordprocessingml.document"] },
+        { id: "nidFront", types: ["application/pdf", "image/jpeg", "image/png"] },
+        { id: "nidBack", types: ["application/pdf", "image/jpeg", "image/png"] },
+        { id: "photo", types: ["image/jpeg", "image/png"] },
+      ];
+      for (let field of fileFields) {
+        const input = document.getElementById(field.id);
+        if (input.files.length > 0) {
+          if (!validateFileSize(input)) return false;
+          // Check file type (cv is optional)
+          if (input.id !== "cv" || input.files.length > 0) {
+            const fileType = input.files[0].type;
+            if (!field.types.includes(fileType)) return false;
+          }
+        } else if (input.hasAttribute("required")) {
+          return false;
+        }
+      }
+      return true;
+    }
+
+    // Provide feedback and prevent invalid submit
+    document.getElementById("jobAppForm").addEventListener("submit", function(e) {
+      document.getElementById("successMsg").style.display = "none";
+      document.getElementById("errorMsg").style.display = "none";
+      if (!validateFiles()) {
+        e.preventDefault();
+        document.getElementById("errorMsg").style.display = "block";
+        return false;
+      }
+      // Show success after submit (will not show if Getform redirects).
+      setTimeout(() => {
+        document.getElementById("successMsg").style.display = "block";
+        document.getElementById("jobAppForm").reset();
+        // Scroll to top of form for visibility on mobile
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }, 700);
+    });
+
+    // Remove error on input change
+    document.getElementById("jobAppForm").addEventListener("input", function() {
+      document.getElementById("errorMsg").style.display = "none";
+    });
+  </script>
+</body>
+</html>
