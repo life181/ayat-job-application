@@ -94,7 +94,6 @@
       text-align: center;
       font-weight: 500;
     }
-    /* Salary Banner */
     .salary-banner {
       display: flex;
       align-items: center;
@@ -136,7 +135,6 @@
       90%  { transform: translateY(-5px) scale(1.15);}
       100% { transform: translateY(-8px) scale(1.19);}
     }
-    /* Perks/Benefits Banner */
     .perk-banner {
       display: flex;
       align-items: center;
@@ -196,7 +194,6 @@
       0%   { transform: translateY(0); }
       100% { transform: translateY(-7px) scale(1.13);}
     }
-
     .eligibility {
       background: linear-gradient(90deg, var(--primary) 90%, #0b3c5d90 100%);
       color: var(--white);
@@ -218,102 +215,71 @@
       letter-spacing: 0.01em;
       text-shadow: 0 1px 2px #0b3c5d20;
     }
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      margin-top: 2px;
-    }
-    label {
-      display: block;
-      font-weight: 600;
-      margin-bottom: 6px;
-      color: var(--primary);
-      font-size: 1rem;
-    }
-    .required {
-      color: var(--error);
-      margin-left: 3px;
-      font-weight: 700;
-    }
-    input[type="text"], input[type="tel"], select, input[type="file"] {
+    .google-form-embed-wrapper {
       width: 100%;
-      padding: 10px 13px;
-      border: 1.5px solid var(--border);
-      border-radius: 7px;
-      font-size: 1rem;
-      box-sizing: border-box;
-      font-family: inherit;
-      background: var(--bg);
-      transition: border-color 0.2s, box-shadow 0.16s;
-      outline: none;
-    }
-    input[type="text"]:focus,
-    input[type="tel"]:focus,
-    select:focus {
-      border-color: var(--accent);
-      box-shadow: 0 0 0 2px #1de9b633;
-    }
-    input[type="file"] {
-      background: var(--white);
-      font-size: 0.98rem;
-      padding: 8px 2px;
-      border: none;
-    }
-    .note {
-      font-size: 0.93rem;
-      color: var(--gray);
-      margin-bottom: 2px;
-      margin-top: 2px;
-    }
-    .form-group {
-      margin-bottom: 2px;
+      min-height: 700px;
       display: flex;
       flex-direction: column;
+      align-items: center;
+      margin: 0 auto;
+      padding: 0;
+      margin-bottom: 12px;
     }
-    .btn-submit {
-      background: linear-gradient(90deg, var(--primary), var(--accent) 80%);
-      color: var(--white);
+    .google-form-embed-wrapper iframe {
+      width: 100%;
+      min-height: 1000px;
+      max-width: 100%;
       border: none;
-      border-radius: 8px;
-      padding: 14px 0;
-      font-size: 1.13rem;
-      font-weight: 700;
-      cursor: pointer;
-      transition: background 0.2s, transform 0.15s, box-shadow 0.18s;
-      margin-top: 8px;
-      box-shadow: 0 2px 11px rgba(29,233,182,0.10);
-      letter-spacing: 0.01em;
-      outline: none;
+      background: transparent;
+      border-radius: 12px;
+      margin: 0;
+      box-shadow: 0 2px 13px #0b3c5d13;
     }
-    .btn-submit:hover, .btn-submit:focus {
-      background: linear-gradient(90deg, var(--accent), var(--primary) 90%);
-      transform: translateY(-2px) scale(1.023);
-      box-shadow: 0 6px 30px #1de9b636;
+    @media (max-width: 600px) {
+      .container {
+        padding: 20px 4vw 14px 4vw;
+        border-radius: 12px;
+      }
+      h1 {
+        font-size: 1.19rem;
+      }
+      .eligibility {
+        font-size: 0.93rem;
+        padding: 10px;
+        border-radius: 7px;
+      }
+      .salary-banner {
+        font-size: 1em;
+        padding: 10px 7px;
+        border-radius: 8px;
+        gap: 7px;
+      }
+      .salary-emoji {
+        font-size: 1.13em;
+      }
+      .perk-banner {
+        font-size: 0.98em;
+        padding: 10px 7px 9px 7px;
+        border-radius: 8px;
+        gap: 8px;
+      }
+      .perk-emoji {
+        font-size: 1.09em;
+      }
+      .google-form-embed-wrapper {
+        min-height: 660px;
+      }
+      .google-form-embed-wrapper iframe {
+        min-height: 700px;
+        max-width: 100vw;
+        border-radius: 7px;
+      }
     }
-    .success, .error-msg {
-      padding: 12px 16px;
-      border-radius: 7px;
-      margin-top: 7px;
-      font-size: 1rem;
-      font-weight: 600;
-      text-align: center;
-      display: none;
-      margin-bottom: 0;
-      letter-spacing: 0.01em;
-      border-width: 1.5px;
+    @media (max-width: 420px) {
+      .container { padding: 10px 2vw 11px 2vw; }
+      .google-form-embed-wrapper { min-height: 570px; }
+      .google-form-embed-wrapper iframe { min-height: 600px; }
     }
-    .success {
-      background: #e7fff6;
-      color: #13a37b;
-      border: 1.5px solid #13a37b;
-    }
-    .error-msg {
-      background: #fff0f0;
-      color: var(--error);
-      border: 1.5px solid var(--error);
-    }
-    /* CMC Section */
     .cmc-section {
       max-width: 860px;
       width: 96vw;
@@ -392,36 +358,6 @@
       }
     }
     @media (max-width: 600px) {
-      .container {
-        padding: 20px 4vw 14px 4vw;
-        border-radius: 12px;
-      }
-      h1 {
-        font-size: 1.19rem;
-      }
-      .eligibility {
-        font-size: 0.93rem;
-        padding: 10px;
-        border-radius: 7px;
-      }
-      .salary-banner {
-        font-size: 1em;
-        padding: 10px 7px;
-        border-radius: 8px;
-        gap: 7px;
-      }
-      .salary-emoji {
-        font-size: 1.13em;
-      }
-      .perk-banner {
-        font-size: 0.98em;
-        padding: 10px 7px 9px 7px;
-        border-radius: 8px;
-        gap: 8px;
-      }
-      .perk-emoji {
-        font-size: 1.09em;
-      }
       .cmc-headline {
         font-size: 1.07rem;
       }
@@ -442,8 +378,7 @@
       }
     }
     @media (max-width: 420px) {
-      .container, .cmc-section { padding: 10px 2vw 11px 2vw; }
-      .cmc-section { margin-top: 20px; }
+      .cmc-section { padding: 10px 2vw 11px 2vw; margin-top: 20px; }
       .cmc-gallery img { max-width: 96vw; }
     }
   </style>
@@ -451,7 +386,6 @@
 <body>
   <div class="container">
     <figure class="logo-box">
-      <!-- Replace the src below with your real logo URL -->
       <img src="logo.png" alt="Ayat Real Estate Logo" loading="lazy">
       <figcaption>Ayat Real Estate</figcaption>
     </figure>
@@ -460,7 +394,6 @@
       Apply for our exciting vacancies! Upload your documents and fill in your details as required.<br>
       We look forward to your application!
     </div>
-    <!-- Salary Advertisement Banner -->
     <div class="salary-banner" aria-label="Attractive Salary">
       <span class="salary-emoji" aria-hidden="true">💰</span>
       <span>
@@ -470,7 +403,6 @@
       </span>
       <span class="salary-emoji" aria-hidden="true">🌟</span>
     </div>
-    <!-- Allowances / Perks Banner -->
     <div class="perk-banner" aria-label="House & Transport Allowance">
       <div>
         <span class="perk-emoji" aria-hidden="true">🏠</span>
@@ -489,154 +421,25 @@
       Only graduates from <span style="color:var(--accent);font-weight:700;">2024 or 2025</span> with a field of study in <span style="color:var(--accent);font-weight:700;">Civil Engineering, Surveying Engineering, Geology, Hydraulic Engineering, Water Engineering, Irrigation Engineering, Water Structure Engineering & Related Fields, Urban Planning Engineering & Related Fields, Architecture Engineering & Related Fields, COTM, Business Management, Management, Accounting, or Economics</span> are eligible to apply.
       <span class="deadline">Application deadline: <u>before August 20, 2025</u></span>
     </div>
-    <form id="jobAppForm" action="https://getform.io/f/aoloxnqb" method="POST" enctype="multipart/form-data" autocomplete="off" novalidate>
-      <div class="form-group">
-        <label for="fullname">Full Name <span class="required">*</span></label>
-        <input type="text" id="fullname" name="Full Name" required maxlength="120" autocomplete="name">
-      </div>
-      <div class="form-group">
-        <label for="phone">Phone Number <span class="required">*</span></label>
-        <input type="tel" id="phone" name="Phone Number" required maxlength="20" pattern="^[0-9+\-\s()]{8,}$" placeholder="+251912345678">
-      </div>
-      <div class="form-group">
-        <label for="position">Which position are you applying for? <span class="required">*</span></label>
-        <select id="position" name="Position Applied For" required>
-          <option value="" disabled selected>-- Select Position --</option>
-          <option>Office Engineer</option>
-          <option>Site Engineer</option>
-          <option>Sales</option>
-          <option>Auditing & Related</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="field">Field of Study <span class="required">*</span></label>
-        <select id="field" name="Field of Study" required>
-          <option value="" disabled selected>-- Select Field --</option>
-          <option>Civil Engineering</option>
-          <option>Surveying Engineering</option>
-          <option>COTM</option>
-          <option>Geology</option>
-          <option>Hydraulic Engineering</option>
-          <option>Water Engineering</option>
-          <option>Irrigation Engineering</option>
-          <option>Water Structure Engineering & Related Fields</option>
-          <option>Urban Planning Engineering & Related Fields</option>
-          <option>Architecture Engineering & Related Fields</option>
-          <option>Business Management & Related</option>
-          <option>Management & Related</option>
-          <option>Accounting & Related</option>
-          <option>Economics</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="gradYear">Graduation Year <span class="required">*</span></label>
-        <select id="gradYear" name="Graduation Year" required>
-          <option value="" disabled selected>-- Select Year --</option>
-          <option>2024</option>
-          <option>2025</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="cert">Upload Scanned Temporary Certificate (PDF) <span class="required">*</span></label>
-        <input type="file" id="cert" name="Temporary Certificate" accept="application/pdf" required aria-describedby="certHelp">
-        <div class="note" id="certHelp">PDF only, max 5MB.</div>
-      </div>
-      <div class="form-group">
-        <label for="cv">Upload CV/Resume <span class="note">(Optional)</span></label>
-        <input type="file" id="cv" name="CV" accept="application/pdf,.doc,.docx" aria-describedby="cvHelp">
-        <div class="note" id="cvHelp">PDF, DOC or DOCX, max 5MB.</div>
-      </div>
-      <div class="form-group">
-        <label for="nidFront">Upload National ID (Front Side) <span class="required">*</span></label>
-        <input type="file" id="nidFront" name="National ID Front" accept="image/*,application/pdf" required aria-describedby="nidFrontHelp">
-        <div class="note" id="nidFrontHelp">Image (JPG/PNG) or PDF, max 5MB.</div>
-      </div>
-      <div class="form-group">
-        <label for="nidBack">Upload National ID (Back Side) <span class="required">*</span></label>
-        <input type="file" id="nidBack" name="National ID Back" accept="image/*,application/pdf" required aria-describedby="nidBackHelp">
-        <div class="note" id="nidBackHelp">Image (JPG/PNG) or PDF, max 5MB.</div>
-      </div>
-      <div class="form-group">
-        <label for="photo">Upload Passport Size Photo (JPG/Image) <span class="required">*</span></label>
-        <input type="file" id="photo" name="Passport Photo" accept="image/jpeg,image/png" required aria-describedby="photoHelp">
-        <div class="note" id="photoHelp">JPG or PNG, max 5MB.</div>
-      </div>
-      <button type="submit" class="btn-submit">Submit Application</button>
-      <div class="success" id="successMsg" role="alert" aria-live="polite">Your application has been submitted! please wait for it until the next page is loaded! Thank you.</div>
-      <div class="error-msg" id="errorMsg" role="alert" aria-live="assertive">Please check your inputs and file sizes/types.</div>
-    </form>
+    <!-- Google Form Embed START -->
+    <div class="google-form-embed-wrapper">
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSd3WIBkQ6rQxS6Ewm7Gxk0uD2b1rQKfKpKXq4qH4cOvM1e6kQ/viewform?embedded=true"
+        width="100%" height="1300" frameborder="0" marginheight="0" marginwidth="0" loading="lazy">
+        Loading…
+      </iframe>
+    </div>
+    <!-- Google Form Embed END -->
   </div>
-
-  <!-- CMC Site 3 Section -->
   <div class="cmc-section">
     <div class="cmc-headline">Discover CMC Site  – The Future of Modern Living in Addis Ababa</div>
     <div class="cmc-desc">
       <strong>CMC Site </strong> by Ayat Real Estate is more than just a residential complex—it's a vibrant, growing community at the heart of Addis Ababa. Enjoy stunning architecture, lush green spaces, and unbeatable access to transportation, shopping, and recreation. Make your career and your future part of something big at CMC Site !
     </div>
     <div class="cmc-gallery">
-      <!-- Replace the src attributes with your own CMC Site 3 photos -->
       <img src="cmc site.jpg" alt="CMC Site  View 1" loading="lazy" tabindex="0">
       <img src="cmc site photo.jpg" alt="CMC Site 3 View 2" loading="lazy" tabindex="0">
       <img src="cmc site 3rd photo.jpg" alt="CMC Site 3 View 3" loading="lazy" tabindex="0">
     </div>
   </div>
-
-  <script>
-    // File size validation (max 5MB)
-    function validateFileSize(input) {
-      if (input.files.length > 0) {
-        return input.files[0].size <= 5 * 1024 * 1024;
-      }
-      return true;
-    }
-
-    // Validate all required file inputs for size and type
-    function validateFiles() {
-      const fileFields = [
-        { id: "cert", types: ["application/pdf"] },
-        { id: "cv", types: ["application/pdf", "application/msword", "application/vnd.openxmlformats-officedocument.wordprocessingml.document"] },
-        { id: "nidFront", types: ["application/pdf", "image/jpeg", "image/png"] },
-        { id: "nidBack", types: ["application/pdf", "image/jpeg", "image/png"] },
-        { id: "photo", types: ["image/jpeg", "image/png"] },
-      ];
-      for (let field of fileFields) {
-        const input = document.getElementById(field.id);
-        if (input.files.length > 0) {
-          if (!validateFileSize(input)) return false;
-          // Check file type (cv is optional)
-          if (input.id !== "cv" || input.files.length > 0) {
-            const fileType = input.files[0].type;
-            if (!field.types.includes(fileType)) return false;
-          }
-        } else if (input.hasAttribute("required")) {
-          return false;
-        }
-      }
-      return true;
-    }
-
-    // Provide feedback and prevent invalid submit
-    document.getElementById("jobAppForm").addEventListener("submit", function(e) {
-      document.getElementById("successMsg").style.display = "none";
-      document.getElementById("errorMsg").style.display = "none";
-      if (!validateFiles()) {
-        e.preventDefault();
-        document.getElementById("errorMsg").style.display = "block";
-        return false;
-      }
-      // Show success after submit (will not show if Getform redirects).
-      setTimeout(() => {
-        document.getElementById("successMsg").style.display = "block";
-        document.getElementById("jobAppForm").reset();
-        // Scroll to top of form for visibility on mobile
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      }, 700);
-    });
-
-    // Remove error on input change
-    document.getElementById("jobAppForm").addEventListener("input", function() {
-      document.getElementById("errorMsg").style.display = "none";
-    });
-  </script>
 </body>
 </html>
