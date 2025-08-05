@@ -489,19 +489,82 @@
       Only graduates from <span style="color:var(--accent);font-weight:700;">2024 or 2025</span> with a field of study in <span style="color:var(--accent);font-weight:700;">Civil Engineering, Surveying Engineering, Geology, Hydraulic Engineering, Water Engineering, Irrigation Engineering, Water Structure Engineering & Related Fields, Urban Planning Engineering & Related Fields, Architecture Engineering & Related Fields, COTM, Business Management, Management, Accounting, or Economics</span> are eligible to apply.
       <span class="deadline">Application deadline: <u>before August 20, 2025</u></span>
     </div>
-    <!-- Instead of custom HTML form, embed Google Form below: -->
-    <div style="margin-top: 18px;">
-      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfv0pJ7nLMlXcX4kGhwqQZl8lQEvG3nQm8VQYxK3eTUnnB6cw/viewform?embedded=true" width="100%" height="1450" frameborder="0" marginheight="0" marginwidth="0" style="border:none; width:100%; min-height:800px; border-radius:12px; box-shadow:0 3px 22px #0b3c5d14;">Loading…</iframe>
-      <div style="text-align:center; font-size:0.96em; color:#888; margin-top:4px;">
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfv0pJ7nLMlXcX4kGhwqQZl8lQEvG3nQm8VQYxK3eTUnnB6cw/viewform" rel="noopener" target="_blank" style="color:#0b3c5d; text-decoration:underline;">If form does not load, click here to open it in a new tab.</a>
-      </div>
-    </div>
-    <!--
-    The below is commented out; you can delete this old form if you wish.
     <form id="jobAppForm" action="https://app.getform.io/forms/bdrgzjnb" method="POST" enctype="multipart/form-data" autocomplete="off" novalidate>
-      ... (all form fields) ...
+      <div class="form-group">
+        <label for="fullname">Full Name <span class="required">*</span></label>
+        <input type="text" id="fullname" name="Full Name" required maxlength="120" autocomplete="name">
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone Number <span class="required">*</span></label>
+        <input type="tel" id="phone" name="Phone Number" required maxlength="20" pattern="^[0-9+\-\s()]{8,}$" placeholder="+251912345678">
+      </div>
+      <div class="form-group">
+        <label for="position">Which position are you applying for? <span class="required">*</span></label>
+        <select id="position" name="Position Applied For" required>
+          <option value="" disabled selected>-- Select Position --</option>
+          <option>Office Engineer</option>
+          <option>Site Engineer</option>
+          <option>Sales</option>
+          <option>Auditing & Related</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="field">Field of Study <span class="required">*</span></label>
+        <select id="field" name="Field of Study" required>
+          <option value="" disabled selected>-- Select Field --</option>
+          <option>Civil Engineering</option>
+          <option>Surveying Engineering</option>
+          <option>COTM</option>
+          <option>Geology</option>
+          <option>Hydraulic Engineering</option>
+          <option>Water Engineering</option>
+          <option>Irrigation Engineering</option>
+          <option>Water Structure Engineering & Related Fields</option>
+          <option>Urban Planning Engineering & Related Fields</option>
+          <option>Architecture Engineering & Related Fields</option>
+          <option>Business Management & Related</option>
+          <option>Management & Related</option>
+          <option>Accounting & Related</option>
+          <option>Economics</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="gradYear">Graduation Year <span class="required">*</span></label>
+        <select id="gradYear" name="Graduation Year" required>
+          <option value="" disabled selected>-- Select Year --</option>
+          <option>2024</option>
+          <option>2025</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="cert">Upload Scanned Temporary Certificate (PDF) <span class="required">*</span></label>
+        <input type="file" id="cert" name="Temporary Certificate" accept="application/pdf" required aria-describedby="certHelp">
+        <div class="note" id="certHelp">PDF only, max 5MB.</div>
+      </div>
+      <div class="form-group">
+        <label for="cv">Upload CV/Resume <span class="note">(Optional)</span></label>
+        <input type="file" id="cv" name="CV" accept="application/pdf,.doc,.docx" aria-describedby="cvHelp">
+        <div class="note" id="cvHelp">PDF, DOC or DOCX, max 5MB.</div>
+      </div>
+      <div class="form-group">
+        <label for="nidFront">Upload National ID (Front Side) <span class="required">*</span></label>
+        <input type="file" id="nidFront" name="National ID Front" accept="image/*,application/pdf" required aria-describedby="nidFrontHelp">
+        <div class="note" id="nidFrontHelp">Image (JPG/PNG) or PDF, max 5MB.</div>
+      </div>
+      <div class="form-group">
+        <label for="nidBack">Upload National ID (Back Side) <span class="required">*</span></label>
+        <input type="file" id="nidBack" name="National ID Back" accept="image/*,application/pdf" required aria-describedby="nidBackHelp">
+        <div class="note" id="nidBackHelp">Image (JPG/PNG) or PDF, max 5MB.</div>
+      </div>
+      <div class="form-group">
+        <label for="photo">Upload Passport Size Photo (JPG/Image) <span class="required">*</span></label>
+        <input type="file" id="photo" name="Passport Photo" accept="image/jpeg,image/png" required aria-describedby="photoHelp">
+        <div class="note" id="photoHelp">JPG or PNG, max 5MB.</div>
+      </div>
+      <button type="submit" class="btn-submit">Submit Application</button>
+      <div class="success" id="successMsg" role="alert" aria-live="polite">Your application has been submitted! please wait for it until the next page is loaded! Thank you.</div>
+      <div class="error-msg" id="errorMsg" role="alert" aria-live="assertive">Please check your inputs and file sizes/types.</div>
     </form>
-    -->
   </div>
 
   <!-- CMC Site 3 Section -->
@@ -517,5 +580,63 @@
       <img src="cmc site 3rd photo.jpg" alt="CMC Site 3 View 3" loading="lazy" tabindex="0">
     </div>
   </div>
+
+  <script>
+    // File size validation (max 5MB)
+    function validateFileSize(input) {
+      if (input.files.length > 0) {
+        return input.files[0].size <= 5 * 1024 * 1024;
+      }
+      return true;
+    }
+
+    // Validate all required file inputs for size and type
+    function validateFiles() {
+      const fileFields = [
+        { id: "cert", types: ["application/pdf"] },
+        { id: "cv", types: ["application/pdf", "application/msword", "application/vnd.openxmlformats-officedocument.wordprocessingml.document"] },
+        { id: "nidFront", types: ["application/pdf", "image/jpeg", "image/png"] },
+        { id: "nidBack", types: ["application/pdf", "image/jpeg", "image/png"] },
+        { id: "photo", types: ["image/jpeg", "image/png"] },
+      ];
+      for (let field of fileFields) {
+        const input = document.getElementById(field.id);
+        if (input.files.length > 0) {
+          if (!validateFileSize(input)) return false;
+          // Check file type (cv is optional)
+          if (input.id !== "cv" || input.files.length > 0) {
+            const fileType = input.files[0].type;
+            if (!field.types.includes(fileType)) return false;
+          }
+        } else if (input.hasAttribute("required")) {
+          return false;
+        }
+      }
+      return true;
+    }
+
+    // Provide feedback and prevent invalid submit
+    document.getElementById("jobAppForm").addEventListener("submit", function(e) {
+      document.getElementById("successMsg").style.display = "none";
+      document.getElementById("errorMsg").style.display = "none";
+      if (!validateFiles()) {
+        e.preventDefault();
+        document.getElementById("errorMsg").style.display = "block";
+        return false;
+      }
+      // Show success after submit (will not show if Getform redirects).
+      setTimeout(() => {
+        document.getElementById("successMsg").style.display = "block";
+        document.getElementById("jobAppForm").reset();
+        // Scroll to top of form for visibility on mobile
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }, 700);
+    });
+
+    // Remove error on input change
+    document.getElementById("jobAppForm").addEventListener("input", function() {
+      document.getElementById("errorMsg").style.display = "none";
+    });
+  </script>
 </body>
 </html>
